@@ -22,4 +22,8 @@ app.post("/products", (req, res) => {
   return res.json(product);
 });
 
+app.get("/products", (req, res) => {
+  res.json(products);
+});
+
 app.listen(4002, () => console.log("Servidor está rodando na porta 4002"));
