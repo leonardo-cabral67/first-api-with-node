@@ -1,0 +1,7 @@
+POST http://localhost:4002/products
+Content-Type: application/json
+
+{
+  "name": "Monitor Gamer",
+  "price": 3000
+}
