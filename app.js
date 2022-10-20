@@ -33,4 +33,21 @@ app.get("/products/:id", (req, res) => {
   res.json(product);
 });
 
+app.put("/products/:id", (req, res) => {
+  const { id } = req.params;
+  const { name, price } = req.body;
+
+  const productIndex = products.findIndex((product) => product.id === id);
+
+  products[productIndex] = {
+    ...products[productIndex],
+    name,
+    price,
+  };
+
+  res.json({
+    message: "produto alterado com sucesso",
+  });
+});
+
 app.listen(4002, () => console.log("Servidor está rodando na porta 4002"));

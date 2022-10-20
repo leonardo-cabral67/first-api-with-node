@@ -2,6 +2,25 @@ POST http://localhost:4002/products
 Content-Type: application/json
 
 {
-  "name": "caderno",
+  "name": "Caderno",
+  "price": 15
+}
+
+###
+
+GET http://localhost:4002/products 
+
+
+###
+
+GET http://localhost:4002/products/6dbc7c91-12c4-46d7-b815-fe53ff1a0cf3
+
+###
+
+PUT http://localhost:4002/products/6dbc7c91-12c4-46d7-b815-fe53ff1a0cf3
+Content-Type: application/json
+
+{
+  "name": "Caderno Hotweels",
   "price": 20
 }
