@@ -45,8 +45,22 @@ app.put("/products/:id", (req, res) => {
     price,
   };
 
-  res.json({
+  return res.json({
     message: "produto alterado com sucesso",
+  });
+});
+
+app.delete("/products/:id", (req, res) => {
+  const { id } = req.params;
+
+  const indexOfDeletedProduct = products.findIndex(
+    (product) => product.id === id
+  );
+
+  products.splice(indexOfDeletedProduct, 1);
+
+  return res.json({
+    message: "Produto deletado com sucesso",
   });
 });
 
