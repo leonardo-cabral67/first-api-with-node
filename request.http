@@ -2,8 +2,8 @@ POST http://localhost:4002/products
 Content-Type: application/json
 
 {
-  "name": "Caderno",
-  "price": 15
+  "name": "Caderno Rosinha",
+  "price": 25
 }
 
 ###
@@ -17,12 +17,12 @@ GET http://localhost:4002/products/6dbc7c91-12c4-46d7-b815-fe53ff1a0cf3
 
 ###
 
-PUT http://localhost:4002/products/31b9c118-28d8-45d2-9e5f-337cac96c1ab
+PUT http://localhost:4002/products/73dc2612-5a19-4ad4-bfa3-4c119229f478
 Content-Type: application/json
 
 {
   "name": "Caderno Hotweels",
-  "price": 20
+  "price": 35
 }
 
 ###
