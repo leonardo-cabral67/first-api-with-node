@@ -29,16 +29,7 @@ app.post("/products", (req, res) => {
   products.push(product);
 
   // prettier-ignore
-  fs.writeFile(
-    "products.json", 
-    JSON.stringify(products), 
-    (err) => {
-      if(err) {
-        console.log(err)
-      } else {
-        console.log("Producto adicionado com sucesso ")
-      }
-  })
+  createProductFile()
 
   return res.json(product);
 });
@@ -66,6 +57,8 @@ app.put("/products/:id", (req, res) => {
     price,
   };
 
+  createProductFile();
+
   return res.json({
     message: "produto alterado com sucesso",
   });
@@ -80,9 +73,21 @@ app.delete("/products/:id", (req, res) => {
 
   products.splice(indexOfDeletedProduct, 1);
 
+  createProductFile();
+
   return res.json({
     message: "Produto deletado com sucesso",
   });
 });
+
+function createProductFile() {
+  fs.writeFile("products.json", JSON.stringify(products), (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Producto adicionado com sucesso ");
+    }
+  });
+}
 
 app.listen(4002, () => console.log("Servidor está rodando na porta 4002"));
